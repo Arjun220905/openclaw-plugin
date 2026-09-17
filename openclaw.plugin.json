@@ -1,0 +1,24 @@
+{
+  "id": "openclaw-x-meetstream-skill",
+  "name": "MeetStream",
+  "description": "Manage MeetStream meeting bots and MIA agents from OpenClaw using native skills and MCP.",
+  "version": "1.1.0",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "skills": [
+    "skills"
+  ],
+  "mcpServers": {
+    "meetstream": {
+      "url": "https://mcp.meetstream.ai/mcp",
+      "transport": "streamable-http",
+      "workingDirectory": ".",
+      "headers": {
+        "Authorization": "Bearer ${MEETSTREAM_API_KEY}"
+      }
+    }
+  }
+}

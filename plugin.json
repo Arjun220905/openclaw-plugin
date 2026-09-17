@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "openclaw-x-meetstream-skill",
+  "version": "1.1.0",
+  "description": "Manage MeetStream meeting bots and MIA agents from OpenClaw using natural language.",
+  "author": {
+    "name": "MeetStream",
+    "email": "hello@meetstream.ai",
+    "url": "https://meetstream.ai"
+  },
+  "homepage": "https://meetstream.ai",
+  "repository": "https://github.com/meetstream-ai/openclaw-plugin",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "meetstream",
+    "meeting-bot",
+    "mia",
+    "mcp",
+    "zoom",
+    "google-meet",
+    "microsoft-teams"
+  ]
+}

@@ -1,0 +1,39 @@
+^D
+[1;36m1. Validate the distributable plugin[0m
+PASS: Agent Plugin package layout, auth, required flows, and security guidance
+{
+  "name": "openclaw-x-meetstream-skill",
+  "version": "1.0.2",
+  "license": "MIT"
+}
+{
+  "type": "streamable-http",
+  "url": "https://mcp.meetstream.ai/mcp",
+  "auth": "Bearer ${MEETSTREAM_API_KEY}"
+}
+
+[1;36m2. Start the loopback-only MeetStream fixture[0m
+
+[1;36m3. “Show the MIA agents I can use”[0m
+Available MIA agents (2):
+- Sales Notetaker  [id: agent-1]
+    mode: pipeline  model: openai/gpt-4o-mini
+- Standup Bot  [id: agent-2]
+    mode: realtime  model: openai/gpt-realtime-mini
+
+[1;36m4. “Send my standup agent to this meeting” (mock only)[0m
+Bot dispatched.
+  bot_id:  bot-new-1
+  status:  Active
+  meeting: https://meet.google.com/abc-defg-hij
+  agent:   agent-2
+
+Check progress with: bot-status.sh bot-new-1
+
+[1;36m5. “Remove the bot from the current call” fails closed when ambiguous[0m
+More than one bot looks active; specify which one to remove:
+  - bot-active-1  status: InCallRecording  meeting: https://meet.google.com/aaa-bbbb-ccc
+  - bot-new-1  status: Joining  meeting: https://meet.google.com/abc-defg-hij
+PASS: no bot was guessed or removed
+
+[1;36mDemo complete — no production meeting or credential was used[0m
