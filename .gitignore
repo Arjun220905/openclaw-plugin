@@ -1,0 +1,9 @@
+.env
+*.tgz
+*.tar.gz
+*.zip
+dist/
+__pycache__/
+*.py[cod]
+.DS_Store
+!demo/meetstream-openclaw-demo.log
